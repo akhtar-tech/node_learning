@@ -1,13 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
+//const cors = require("cors");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:5000"
-};
-app.use(cors(corsOptions));
+// var corsOptions = {
+//   origin: "http://localhost:5000"
+// };
+//app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -28,6 +28,7 @@ db.sequelize.sync()
     console.log("Synced db.");
   })
   .catch((err) => {
+    console.log(err);
     console.log("Failed to sync db: " + err.message);
   });
 

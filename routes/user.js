@@ -1,13 +1,13 @@
+var router = require("express").Router();
+
+const {create,findAll} = require("../controllers/user.js");
+
 module.exports = app => {
-  const users = require("../controllers/user.js");
-
-  var router = require("express").Router();
-
-  // Create a new Tutorial
-  //router.post("/", tutorials.create);
+  // Create a new user
+  router.post("/", create);
 
   // Retrieve all users
-  router.get("/", users.findAll);
+  router.get("/", findAll);
 
   // Retrieve all published Tutorials
   //router.get("/published", tutorials.findAllPublished);
